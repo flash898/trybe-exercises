@@ -3,9 +3,18 @@ div:nth-child(3):hover{
     border: rgb(41, 15, 158) 2px solid;
 }
 
+div:nth-child(3):hover h3{
+    color: darkred;
+}
+
+
 div:nth-child(4):hover{
     color: rgb(223, 226, 43);
     border: rgb(223, 226, 43) 2px solid;
+}
+
+div:nth-child(4):hover h3{
+    color: fuchsia;
 }
 
 div:nth-child(5):hover{
@@ -14,9 +23,16 @@ div:nth-child(5):hover{
     font-size: 2em;
 }
 
+div:nth-child(5):hover h3{
+    color: rgb(48, 60, 170);
+}
 div:nth-child(6):hover{
     color: rgb(7, 77, 11);
     border: rgb(7, 77, 11) 2px solid;
+}
+
+div:nth-child(6):hover h3{
+    color: rgb(82, 11, 82);
 }
 
 div:nth-child(7):hover{
@@ -24,6 +40,9 @@ div:nth-child(7):hover{
     border: rgb(248, 88, 96) 2px solid;
 }
 
+div:nth-child(7):hover h3{
+    color: rgb(245, 137, 245);
+}
 div:nth-child(odd){
     font-style: italic;
 }
