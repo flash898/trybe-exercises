@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: rgb(68, 67, 67);
+}
+header {
+    background-image: url(/images/stoma-header.jpg);
+    background-size: cover;
+    background-position: 0px -450px;
+    height: 300px;
+    color: rgb(68, 67, 67);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+    display: inline-block;
+    width: 10%;
+    margin-left: 5px;
+    border: 2px solid #999;
+}
+
+table {
+    text-align: center;
+    margin: 20px 50% 20px 26%;
+}
+
+table, td, tr {
+    border: black solid 1px;
+    padding: 10px;
+}
+
+.facts {
+    text-align: center;
+    border: 2px solid #999;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0px 10px 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul li a:hover{
+    text-decoration: underline;
+}
+
+section:nth-child(6) > ul  li {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+section:nth-child(6) > ul  li:hover {
+    background-color: #999;
+}
+
+.reference {
+    display: block;
+    margin-top: 50px;
+    text-align: left; 
+}
+
+.video {
+    float: right;
+    margin-top: -80px;
+    background-color: rgb(68, 67, 67);
+    border: 2px solid black;
+    color: #000000;
+    text-align: center;
+}
+
+.video a {
+    color: #000000;
+}
+
+.video a:hover {
+    background-color: #999;
+}
+
+footer {
+    background-color: #000;
+    color: rgb(68, 67, 67);
+    text-align: center;
+}
+
+.content-section {
+    border: 2px solid #999;
+    padding: 20px;
+}
