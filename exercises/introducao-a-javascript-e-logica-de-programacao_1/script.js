@@ -1,4 +1,4 @@
-/* 1 - Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b , definidas no começo com os valores que serão operados. Faça programas para: adição, subtração, multiplicação, divisão e módulo.*/
+// 1 - Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b , definidas no começo com os valores que serão operados. Faça programas para: adição, subtração, multiplicação, divisão e módulo.//
 
 // let a = 2;
 // let b = 3;
@@ -28,15 +28,31 @@
 
 // 2- Faça um programa que retorne o maior de dois números. Defina no começo do programa duas variáveis com os valores que serão comparados. // 
 
+// let num1 = 10;
+// let num2 = 10;
+
+// if (num2 > num1) {
+//   console.log(num2 + " esse é o maior número!");
+// } else if (num1 > num2) {
+//   console.log(num1 + " esse é o maior número!");
+// } else if (num1 = num2) {
+//   console.log("Os números possuem o mesmo valor!");
+// } 
+
+
+// 3- Faça um programa que retorne o maior de três números. Defina no começo do programa três variáveis com os valores que serão comparados.//
+
 let num1 = 10;
-let num2 = 10;
+let num2 = 1;
+let num3 = 15; 
 
-if (num2 > num1) {
-  console.log(num2 + " esse é o maior número!");
-} else if (num1 > num2) {
-  console.log(num1 + " esse é o maior número!");
-} else if (num1 = num2) {
-  console.log("Os números possuem o mesmo valor!");
-} 
-
+if (num1 > num2 && num1 > num3){
+  console.log(num1 + " esse é o maior!");
+} else if (num2 > num1 && num2 > num3){
+  console.log(num2 + " esse é o maior!");
+} else if (num3 > num1 && num3 > num2){
+  console.log(num3 + " esse é o maior!");
+} else if (num1 = num2 = num3){
+  console.log("Números iguais");
+}
 
