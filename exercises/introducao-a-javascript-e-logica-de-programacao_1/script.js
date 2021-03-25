@@ -108,20 +108,44 @@
 // Porcentagem < 50 -> F
 // O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100. 
 
-let nota = 72;
+// let nota = 72;
 
-if(nota >= 90 && nota <= 100){
-  console.log("A");
-} else if (nota < 90 && nota >= 80){
-  console.log("B");
-} else if (nota < 80 && nota >= 70){
-  console.log("C");
-} else if (nota < 70 && nota >= 60){
-  console.log("D");
-} else if (nota < 60 && nota >= 50){
-  console.log("E");
-} else if (nota < 50){
-  console.log("F");
-} else if (nota > 100 || nota < 50){
-  console.log("Nota fora dos padrões");
+// if(nota >= 90 && nota <= 100){
+//   console.log("A");
+// } else if (nota < 90 && nota >= 80){
+//   console.log("B");
+// } else if (nota < 80 && nota >= 70){
+//   console.log("C");
+// } else if (nota < 70 && nota >= 60){
+//   console.log("D");
+// } else if (nota < 60 && nota >= 50){
+//   console.log("E");
+// } else if (nota < 50){
+//   console.log("F");
+// } else if (nota > 100 || nota < 50){
+//   console.log("Nota fora dos padrões");
+// }
+
+// 8- Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+
+// let num1 = 5;
+// let num2 = 3;
+// let num3 = 1;
+
+// if (num1 % 2 == 0 || num2 % 2 == 0 || num3 % 2 == 0){
+//   console.log("true");
+// } else {
+//   console.log("false");
+// }
+
+// 9- 
+
+let num1 = 2;
+let num2 = 4;
+let num3 = 10;
+
+if (num1 % 2 == 1 || num2 % 2 == 1 || num3 % 2 == 1){
+  console.log("true");
+} else {
+  console.log("false");
 }
