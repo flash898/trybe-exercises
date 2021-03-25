@@ -26,22 +26,33 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 // 4- Com o mesmo código do exercício anterior, caso valor final seja maior que 20, imprima a mensagem: "valor maior que 20". Caso não seja, imprima a mensagem: "valor menor ou igual a 20";
 
-let resultado = 0;
-let sum;
-for(let i=0; i < numbers.length; i++){
-  resultado += numbers[i];
-  sum = resultado/numbers.length;
-    
-} 
+// let resultado = 0;
+// let sum;
 
-if(sum > 20){
-  console.log("Valor maior que 20!")
-} else {
-  console.log("Valor menor ou igual a 20!")
-}
+// for(let i=0; i < numbers.length; i++){
+//   resultado += numbers[i];
+//   sum = resultado/numbers.length;
+    
+// } 
+
+// if(sum > 20){
+//   console.log("Valor maior que 20!")
+// } else {
+//   console.log("Valor menor ou igual a 20!")
+// }
 
 
 // 5- Utilizando for , descubra qual o maior valor contido no array e imprima-o;
+
+let maior = 0;
+for (let i=0; i < numbers.length; i++){
+
+    if(numbers[i] > maior){
+      maior = numbers[i];
+    }
+  }
+  console.log(maior);
+  
 // 6- Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 // 7- Utilizando for , descubra qual o menor valor contido no array e imprima-o;
 // 8- Utilizando for , crie uma array que vá de 1 até 25 e imprima o resultado;
