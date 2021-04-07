@@ -79,11 +79,35 @@
       exerciseFourItem.innerText = 'Manipulando com DOM';
       exerciseFour.appendChild(exerciseFourItem);
       // // Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      let exerciseFive = document.querySelector('.main-content');
+      let exerciseFiveItem = document.createElement('div');
+      exerciseFiveItem.className = 'left-content';
+      exerciseFive.appendChild(exerciseFiveItem);
       // // Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      let exerciseSix = document.querySelector('.main-content');
+      let exerciseSixItem = document.createElement('div');
+      exerciseSixItem.className = 'right-content';
+      exerciseSix.appendChild(exerciseSixItem);
       // // // // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
+      let exerciseSeven = document.querySelector('.left-content');
+      let exerciseSevenItem = document.createElement('img');
+      // exerciseSevenItem.setAttribute('src');
+      exerciseSevenItem.className = 'small-image';
+      exerciseSeven.appendChild(exerciseSevenItem);
       // // // // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      for (let i = 0; i < 10; i += 1){
+        let exerciseEight = document.querySelector('.right-content');
+        let exerciseEightItem = document.createElement('ul');
+        exerciseEightItem.innerText = '10 Motivos para amar essa imagem';
+        exerciseEight.appendChild(exerciseEightItem);  
+      }
       // // Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
-
+      for (let i = 0; i < 3; i += 1){
+        let exerciseNine = document.querySelector('.main-content');
+        let exerciseNineItem = document.createElement('h3');
+        exerciseNineItem.innerText = 'Good Exercises';
+        exerciseNine.appendChild(exerciseNineItem);
+      }
     </script>
   </body>
 </html>
