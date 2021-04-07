@@ -92,14 +92,18 @@
       // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
       let exerciseSeven = document.querySelector('.left-content');
       let exerciseSevenItem = document.createElement('img');
+      exerciseSevenItem.setAttribute('src', 'https://picsum.photos/200');
       exerciseSevenItem.className = 'small-image';
       exerciseSeven.appendChild(exerciseSevenItem);
       // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let exerciseEight = document.querySelector('.right-content');
+      let exerciseEightItem = document.createElement('ul');
+      exerciseEight.appendChild(exerciseEightItem);
       for (let i = 1; i <= 10; i += 1){
-        let exerciseEight = document.querySelector('.right-content');
-        let exerciseEightItem = document.createElement('ul');
-        exerciseEightItem.innerText = `${i} Motivos para amar essa imagem`;
-        exerciseEight.appendChild(exerciseEightItem);
+        let exerciseEightItemDois = document.querySelector('ul');
+        exerciseEightItemDoisItem = document.createElement('li')
+        exerciseEightItemDoisItem.innerText = `${i} Motivos para amar essa imagem`;
+        exerciseEightItemDois.appendChild(exerciseEightItemDoisItem);
       }
       // Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
       for (let i = 0; i < 3; i += 1){
@@ -126,15 +130,9 @@
       let exerciseFourteenItem = exerciseFourteen.parentNode;
       exerciseFourteenItem.style.backgroundColor = 'green';
       // Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
-      let exerciseFifteen = document.querySelectorAll('ul');
-      for(let i = 0; i < exerciseFifteen.length; i += 1) {
-        let exerciseFifteenItem = exerciseFifteen[i];
-
-        if (exerciseFifteenItem === 0 ) {
-          exerciseEight.removeChild(exerciseFifteenItem);
-        }
-      }
-
+      let exerciseFifteen = document.querySelector('ul');
+      exerciseFifteen.removeChild(exerciseFifteen.lastChild);
+      exerciseFifteen.removeChild(exerciseFifteen.lastChild);
     </script>
   </body>
 </html>
