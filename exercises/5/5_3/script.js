@@ -147,3 +147,18 @@ function legendColor(string){
   exerciseEigth.appendChild(exerciseEigthItem);
 }
 legendColor('red');
+
+/* 9- Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.*/
+
+function taskSelection(){
+  let exerciseNine = document.querySelector('.task');
+  exerciseNine.addEventListener('click', function(){
+    if (exerciseNine.className !== 'select'){
+      exerciseNine.classList.add('select');
+    } else {
+      exerciseNine.classList.remove('select');
+    }
+  }) 
+}
+taskSelection();
