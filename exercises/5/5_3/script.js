@@ -46,3 +46,16 @@ function daysInCalendar(array){
 }
 daysInCalendar(dezDaysList);
 
+/* 2- Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
+Adicione a este botão a ID "btn-holiday".
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container".*/
+
+function createButton(string){
+  let exerciseTwo = document.querySelector('.buttons-container');
+  let exerciseTwoItem = document.createElement('button');
+  exerciseTwoItem.id = 'btn-holiday';
+  exerciseTwoItem.innerText = string;
+  exerciseTwo.appendChild(exerciseTwoItem);
+}
+createButton('Feriados');
+
