@@ -101,7 +101,7 @@ function fridayChange(){
       if (exerciseFiveFriday[i].innerText !== 'SEX-tou'){
         exerciseFiveFriday[i].innerText = 'SEX-tou';
       } else {
-        exerciseFiveFriday[i].innerText = exerciseFiveFriday[i];
+        exerciseFiveFriday[i].innerText = parseInt(exerciseFiveFriday[i].nextElementSibling.innerText) -1;
       } 
     }
   })
@@ -154,7 +154,7 @@ Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task ,
 function taskSelection(){
   let exerciseNine = document.querySelector('.task');
   exerciseNine.addEventListener('click', function(){
-    if (exerciseNine.className !== 'select'){
+    if (exerciseNine.className !== 'task select'){
       exerciseNine.classList.add('select');
     } else {
       exerciseNine.classList.remove('select');
@@ -162,3 +162,20 @@ function taskSelection(){
   }) 
 }
 taskSelection();
+
+/* 10- Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).*/ 
+
+function daySelect(){
+  let exerciseTen = document.querySelector('#days');
+
+      exerciseTen.addEventListener('click', function(event){
+        let exerciseTen2 = document.querySelector('.select');
+        if (event.target.style.color !== exerciseTen2.style.backgroundColor){
+          event.target.style.color = exerciseTen2.style.backgroundColor;
+        } else {
+          event.target.style.color = 'rgb(119,119,119)';
+        }
+      }) 
+}
+daySelect();
