@@ -1,5 +1,14 @@
-.buttons {
-  display: inline-block;
+/* .buttons {
+  display: inline;
   border: 1px solid black;
   width: auto;
+} */
+
+.background,
+.letter-color,
+.fontsizer, 
+.spaceliner, 
+.font-typer {
+  display: inline-block;
+  border: 1px solid black
 }
