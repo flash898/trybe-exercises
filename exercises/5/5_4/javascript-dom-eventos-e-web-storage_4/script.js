@@ -14,8 +14,8 @@ function backgroundColor(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'background';
-    createButton.style.backgroundColor = array[i];
-    createButton.innerHTML = `Cor de fundo: ${array[i]}`;
+    createButton.style.border = `1px solid ${array[i]}`;
+    createButton.innerHTML = array[i];
     blockBgC.appendChild(createButton);
   }
 }
@@ -23,9 +23,8 @@ backgroundColor(arrayOfColors);
 
 let backgroundColorButton = document.querySelectorAll('.background');
 for (let i = 0; i < backgroundColorButton.length; i += 1) {
-  backgroundColorButton[i].addEventListener('click', () => {
-    if (getP.style.backgroundColor !== backgroundColorButton[i].style.backgroundColor);
-    getP.style.backgroundColor = backgroundColorButton[i].style.backgroundColor;
+  backgroundColorButton[i].addEventListener('click', (event) => {
+    getP.style.backgroundColor = event.target.innerHTML;
   });
 }
 
@@ -38,8 +37,8 @@ function color(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'letter-color';
-    createButton.style.color = array[i]
-    createButton.innerHTML = `Cor da letra: ${array[i]}`;
+    createButton.style.border = `1px solid ${array[i]}`;
+    createButton.innerHTML = array[i];
     blockColor.appendChild(createButton);
   }
 }
@@ -47,8 +46,8 @@ color(arrayOfColors);
 
 let colorButton = document.querySelectorAll('.letter-color');
 for (let index = 0; index < colorButton.length; index += 1) {
-  colorButton[index].addEventListener('click', () => {
-    getP.style.color = colorButton[index].style.color;
+  colorButton[index].addEventListener('click', (event) => {
+    getP.style.color = event.target.innerText;
   });
 }
 
@@ -60,14 +59,13 @@ function fontSizer(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'fontsizer';
-    createButton.style.fontSize = '1em';
     createButton.innerHTML = array[i];
     blockFS.appendChild(createButton);
   }
 }
 fontSizer(arrayOfSizes);
 
-let fontSizerButton = document.querySelectorAll('.buttons');
+let fontSizerButton = document.querySelectorAll('.fontsizer');
 for (let index = 0; index < fontSizerButton.length; index += 1) {
   fontSizerButton[index].addEventListener('click', (event) => {
     getP.style.fontSize = event.target.innerText;
@@ -82,12 +80,18 @@ function spaceLine(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'spaceliner';
-    createButton.innerHTML = `Espaçamento: ${array[i]}`;
+    createButton.innerHTML = array[i];
     blockSL.appendChild(createButton);
   }
 }
 spaceLine(arrayOfSizes);
 
+let spaceLineButton = document.querySelectorAll('.spaceliner');
+for (let index = 0; index < spaceLineButton.length; index += 1) {
+  spaceLineButton[index].addEventListener('click', (event) => {
+    getP.style.lineHeight = event.target.innerHTML;
+  });
+}
 function fontType(array){
   let blockFT = document.createElement('div');
   blockFT.innerText = 'Selecione o tipo de fonte: ';
