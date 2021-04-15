@@ -3,7 +3,7 @@ let getButtons = document.querySelectorAll('.background');
 let getDivButton = document.querySelector('.buttons');
 
 let arrayOfColors = ['red', 'blue', 'yellow', 'white'];
-let arrayOfSizes = ['2px', '3px', '4px', '5px'];
+let arrayOfSizes = ['1.2em', '1.3em', '1.4em', '1.5em'];
 let arrayOfFonts = ['Arial', 'Roboto', 'sans-serif', 'serif']
 
 function backgroundColor(array){
@@ -60,11 +60,19 @@ function fontSizer(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'fontsizer';
-    createButton.innerHTML = `Tamanho da fonte: ${array[i]}`;
+    createButton.style.fontSize = '1em';
+    createButton.innerHTML = array[i];
     blockFS.appendChild(createButton);
   }
 }
 fontSizer(arrayOfSizes);
+
+let fontSizerButton = document.querySelectorAll('.buttons');
+for (let index = 0; index < fontSizerButton.length; index += 1) {
+  fontSizerButton[index].addEventListener('click', (event) => {
+    getP.style.fontSize = event.target.innerText;
+  });
+}
 
 function spaceLine(array){
   let blockSL = document.createElement('div');
@@ -96,7 +104,7 @@ fontType(arrayOfFonts);
 
 // let backgroundColorButton = document.querySelectorAll('.buttons');
 // let colorButton = document.querySelectorAll('.buttons');
-// let fontSizerButton = document.querySelector('.buttons');
+// let fontSizerButton = document.querySelectorAll('.buttons');
 // let spaceLineButton = document.querySelector('.buttons');
 // let fontTypeButton = document.querySelector('.buttons');
 // let createSeparation = document.querySelector('.buttons');
