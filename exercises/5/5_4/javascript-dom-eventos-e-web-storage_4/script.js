@@ -108,10 +108,24 @@ function fontType(array){
 fontType(arrayOfFonts);
 
 let fontTypeButton = document.querySelectorAll('.font-typer');
-console.log(fontTypeButton);
 for (let index = 0; index < fontTypeButton.length; index += 1) {
   fontTypeButton[index].addEventListener('click', (event) => {
     getP.style.fontFamily = event.target.innerHTML;
   });
 }
 
+const savedPreferences = document.querySelector('body');
+console.log(savedPreferences);
+let getSaveBtn = document.querySelector('.salvar');
+getSaveBtn.addEventListener('click', () => {
+  localStorage.setItem('preferences', savedPreferences.innerHTML);
+});
+  
+
+function loadPreferences() {
+  savedPreferences.innerHTML = localStorage.getItem('preferences');
+}
+
+if (localStorage.getItem('preferences')) {
+  loadPreferences();
+}
