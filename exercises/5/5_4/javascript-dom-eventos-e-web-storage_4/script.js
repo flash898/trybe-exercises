@@ -4,7 +4,7 @@ let getDivButton = document.querySelector('.buttons');
 
 let arrayOfColors = ['red', 'blue', 'yellow', 'white'];
 let arrayOfSizes = ['1.2em', '1.3em', '1.4em', '1.5em'];
-let arrayOfFonts = ['Arial', 'Roboto', 'sans-serif', 'serif']
+let arrayOfFonts = ["Times New Roman, Times, serif", "Courier New, Courier, monospace", "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"];
 
 function backgroundColor(array){
   let blockBgC = document.createElement('div');
@@ -56,7 +56,7 @@ function fontSizer(array){
   blockFS.innerText = 'Selecione o tamanho da fonte: ';
   blockFS.style.border = '1px solid black';
   getDivButton.appendChild(blockFS);
-  for (let i = 0; i < arrayOfColors.length; i += 1){
+  for (let i = 0; i < arrayOfSizes.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'fontsizer';
     createButton.innerHTML = array[i];
@@ -77,7 +77,7 @@ function spaceLine(array){
   blockSL.innerText = 'Selecione o espaçamento: ';
   blockSL.style.border = '1px solid black';
   getDivButton.appendChild(blockSL);
-  for (let i = 0; i < arrayOfColors.length; i += 1){
+  for (let i = 0; i < arrayOfSizes.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'spaceliner';
     createButton.innerHTML = array[i];
@@ -92,23 +92,26 @@ for (let index = 0; index < spaceLineButton.length; index += 1) {
     getP.style.lineHeight = event.target.innerHTML;
   });
 }
+
 function fontType(array){
   let blockFT = document.createElement('div');
   blockFT.innerText = 'Selecione o tipo de fonte: ';
   blockFT.style.border = '1px solid black';
   getDivButton.appendChild(blockFT);
-  for (let i = 0; i < arrayOfColors.length; i += 1){
+  for (let i = 0; i < arrayOfFonts.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'font-typer';
-    createButton.innerHTML = `Tipo da fonte: ${array[i]}`;
+    createButton.innerHTML = array[i];
     blockFT.appendChild(createButton);
   }
 }
 fontType(arrayOfFonts);
 
-// let backgroundColorButton = document.querySelectorAll('.buttons');
-// let colorButton = document.querySelectorAll('.buttons');
-// let fontSizerButton = document.querySelectorAll('.buttons');
-// let spaceLineButton = document.querySelector('.buttons');
-// let fontTypeButton = document.querySelector('.buttons');
-// let createSeparation = document.querySelector('.buttons');
+let fontTypeButton = document.querySelectorAll('.font-typer');
+console.log(fontTypeButton);
+for (let index = 0; index < fontTypeButton.length; index += 1) {
+  fontTypeButton[index].addEventListener('click', (event) => {
+    getP.style.fontFamily = event.target.innerHTML;
+  });
+}
+
