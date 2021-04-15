@@ -2,7 +2,7 @@ let getP = document.querySelector('.main');
 let getButtons = document.querySelectorAll('.background');
 let getDivButton = document.querySelector('.buttons');
 
-let arrayOfColors = ['red', 'blue', 'yellow', 'pink'];
+let arrayOfColors = ['red', 'blue', 'yellow', 'white'];
 let arrayOfSizes = ['2px', '3px', '4px', '5px'];
 let arrayOfFonts = ['Arial', 'Roboto', 'sans-serif', 'serif']
 
@@ -22,7 +22,6 @@ function backgroundColor(array){
 backgroundColor(arrayOfColors);
 
 let backgroundColorButton = document.querySelectorAll('.background');
-console.log(backgroundColorButton);
 for (let i = 0; i < backgroundColorButton.length; i += 1) {
   backgroundColorButton[i].addEventListener('click', () => {
     if (getP.style.backgroundColor !== backgroundColorButton[i].style.backgroundColor);
@@ -39,11 +38,19 @@ function color(array){
   for (let i = 0; i < arrayOfColors.length; i += 1){
     let createButton = document.createElement('button');
     createButton.className = 'letter-color';
+    createButton.style.color = array[i]
     createButton.innerHTML = `Cor da letra: ${array[i]}`;
     blockColor.appendChild(createButton);
   }
 }
 color(arrayOfColors);
+
+let colorButton = document.querySelectorAll('.letter-color');
+for (let index = 0; index < colorButton.length; index += 1) {
+  colorButton[index].addEventListener('click', () => {
+    getP.style.color = colorButton[index].style.color;
+  });
+}
 
 function fontSizer(array){
   let blockFS = document.createElement('div');
@@ -88,7 +95,7 @@ function fontType(array){
 fontType(arrayOfFonts);
 
 // let backgroundColorButton = document.querySelectorAll('.buttons');
-// let colorButton = document.querySelector('.buttons');
+// let colorButton = document.querySelectorAll('.buttons');
 // let fontSizerButton = document.querySelector('.buttons');
 // let spaceLineButton = document.querySelector('.buttons');
 // let fontTypeButton = document.querySelector('.buttons');
