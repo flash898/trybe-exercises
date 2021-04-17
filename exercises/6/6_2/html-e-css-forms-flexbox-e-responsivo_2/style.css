@@ -1,0 +1,14 @@
+.form-box {
+  width: 50%;
+  margin: 5% auto;
+  opacity: 0.7;
+}
+
+.button-content {
+  margin-left: 40%;
+}
+
+body {
+  background-image: url('/tenor.gif');
+  background-size: cover;
+}
