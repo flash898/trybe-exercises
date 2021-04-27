@@ -20,21 +20,36 @@ oddsAndEvens.sort((a, b) => a - b);
 console.log(oddsAndEvens);
 
 /* exercicio 3 */
-let fact = (number) => {
+const fact = (number) => {
   let sum = 1;
   for (let i = 1; i <= number; i += 1) {
     sum *= i;
   }
   return sum;
 }
-console.log(fact(4))
+console.log(fact(4));
 
-let fact = (number) => {
+const fact = (number) => {
   let sum = 1;
   for (let i = number; i > 0; i -= 1) {
     sum *= i;
   }
-
   return sum;
 }
-console.log(fact(4))
+console.log(fact(4));
+
+/* exercicio 4 */
+const largestWord = (string) => {
+  let arrOfBiggest = string.split(' ');
+  let longWord = '';
+  for (let i = 0; i < arrOfBiggest.length; i += 1) {
+    if (arrOfBiggest[i].length > longWord.length) {
+      longWord = arrOfBiggest[i];
+    }
+  }
+  return longWord;
+}
+console.log(largestWord("Antônio foi no banheiro e não sabemos o que aconteceu"));
+
+const largestWord = (string) => {string.split(' ').sort(function(a,b){return b.length - a.length})};
+console.log(largestWord("Antônio foi no banheiro e não sabemos o que aconteceu"));
