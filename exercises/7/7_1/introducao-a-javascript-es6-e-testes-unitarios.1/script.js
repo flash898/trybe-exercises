@@ -54,13 +54,27 @@
 // const largestWord = (string) => string.split(' ').sort((a,b) => b.length - a.length)[0];
 // console.log(largestWord("Antônio foi no banheiro e não sabemos o que aconteceu"));
 
-/* exercicio 5 */
-const getBtn = document.querySelector('#button-test');
-const getSpan = document.querySelector('#count')
-let count = 0;
-const putCount = () => {
-  getBtn.addEventListener('click', () => {
-    getSpan.innerHTML = count += 1;
-  });
+// /* exercicio 5 */
+// const getBtn = document.querySelector('#button-test');
+// const getSpan = document.querySelector('#count')
+// let count = 0;
+// const putCount = () => {
+//   getBtn.addEventListener('click', () => {
+//     getSpan.innerHTML = count += 1;
+//   });
+// }
+// putCount();
+
+const example = string => {
+  return `Tryber ${string} aqui!`;
 }
-putCount();
+
+const skills = ['HTML', 'JS', 'CSS', 'GUITAR', 'SOFTSKILLS'];
+const sortSkills = skills.sort();
+
+const exampleTwo = string => {
+  for (let i = 0; i < sortSkills.length; i += 1) {
+    return string = `${example('Thyago')}. Minhas habilidades são:\n ${sortSkills[i]}`;
+  }
+}
+console.log(exampleTwo('HTML', 'JS', 'CSS', 'GUITAR', 'SOFTSKILLS'));
