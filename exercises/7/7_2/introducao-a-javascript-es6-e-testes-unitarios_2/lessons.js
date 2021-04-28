@@ -23,9 +23,13 @@ Object.assign(lesson2, {'turno': 'manhã'});
 // console.log(lesson2);
 
 /* Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro. */
-const list = Object.keys(lesson2);
-let str = '';
-for (index in list) {
-  str += `${list[index]}\n`;
-}
-console.log(str);
+const list = (obj) => Object.keys(obj);
+// let str = '';
+// for (index in list) {
+//   str += `${list[index]}\n`;
+// }
+console.log(list(lesson2));
+
+/* Crie uma função para mostrar o tamanho de um objeto. */
+const listSize = (obj) => Object.keys(obj).length;
+console.log(listSize(lesson2));
