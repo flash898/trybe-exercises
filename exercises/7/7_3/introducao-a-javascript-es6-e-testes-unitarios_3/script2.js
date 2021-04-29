@@ -11,7 +11,7 @@ function myRemove(arr, item) {
 }
 
 // implemente seus testes aqui
-
+assert.strictEqual(typeof myRemove, 'function');
 /* Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado */
 assert.deepStrictEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 4]);
 
