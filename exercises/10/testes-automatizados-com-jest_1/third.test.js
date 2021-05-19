@@ -1,4 +1,3 @@
-const { expect, it } = require('@jest/globals');
 const myRemoveWithoutCopy = require('./third');
 
 describe('Função myRemoveWothoutCopy', () => {
@@ -12,7 +11,7 @@ describe('Função myRemoveWothoutCopy', () => {
     expect(myRemoveWithoutCopy([1, 2, 3, 4])).toEqual([1, 2, 3, 4]);
   });
   it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 5) retorna o array esperado', () => {
-    expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4])
+    expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
   });
 });
 
