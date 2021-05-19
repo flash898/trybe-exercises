@@ -1,0 +1,56 @@
+/*Faça o tamanho da fonte ser maior;
+Faça o tamanho da fonte dos elementos h1 ser menor;
+Aumente o espaçamento entre as figuras;
+Adicione um pouco de margin na página.*/
+
+body {
+  background-color: lightblue;
+  margin: 5px;
+  color: rgb(121, 116, 116);
+}
+
+h1 {
+  color: #227712;
+  font-size: 1.5rem;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid #32d477;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #227712;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #32d477;
+  border-radius: 5px;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+    margin: 20px auto;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: lightseagreen;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
