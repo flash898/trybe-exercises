@@ -11,10 +11,6 @@ describe('Testing first function', () => {
   });
 });
 
-
-// 2- Utilizando a sintaxe de Promise , faça um teste que verifique o resultado da função getUserName para o caso em que o usuário é encontrado, e também um teste para o caso em que o usuário não é encontrado.
-// Dica : Veja os dados falsos utilizados no banco de dados, disponíveis na variável users , para saber quais IDs existem.
-
 describe('Testing second function', () => {
   it('User found', async () => {
     expect.assertions(1);
@@ -30,5 +26,3 @@ describe('Testing second function', () => {
     }
   });
 });
-// 3- Reescreva o teste do exercício anterior, desta vez utilizando a sintaxe de async/await .
-// Dica: Utilize o try/catch para o caso de erro.
