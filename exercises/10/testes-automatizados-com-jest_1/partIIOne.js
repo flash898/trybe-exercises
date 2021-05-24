@@ -1,34 +1,48 @@
-// encodeDecode.js
-function mapString(objectMap, string) {
-  const splitString = string.split('');
-  const mappedArray = splitString.map((character) => {
-    if(objectMap[character]) {
-      return objectMap[character];
+// Funções para o encode
+function checkVowel(vowel) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let number = [1, 2, 3, 4, 5];
+  for (let i = 0; i < vowels.length; i += 1) {
+    if (vowel === vowels[i]) {
+      vowel = number[i];
     }
-    return character;
-  });
-  return mappedArray.join('');
+  }
+  return vowel;
 }
 
 function encode(string) {
-  const map = {
-    a: 1,
-    e: 2,
-    i: 3,
-    o: 4,
-    u: 5,
-  };
-  return mapString(map, string);
+  let arrNew = string.split('');
+  for (let letter = 0; letter < arrNew.length; letter += 1) {
+    arrNew[letter] = checkVowel(arrNew[letter]);
+  }
+  arrNew = arrNew.join('');
+  return arrNew;
 }
+
+// Funções para o decode
+function checkDecode(number) {
+  let numbers = ['1', '2', '3', '4', '5'];
+  let vowel = ['a', 'e', 'i', 'o', 'u'];
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (number === numbers[i]) {
+      number = vowel[i];
+    }
+  }
+  return number;
+}
+
 function decode(string) {
-  const map = {
-    1: 'a',
-    2: 'e',
-    3: 'i',
-    4: 'o',
-    5: 'u',
-  };
-  return mapString(map, string);
+  let arrNew = string.split('');
+  for (let letter = 0; letter < arrNew.length; letter += 1) {
+    arrNew[letter] = checkDecode(arrNew[letter]);
+  }
+  arrNew = arrNew.join('');
+  return arrNew;
 }
-const functions = { encode, decode };
-module.exports = functions;
+
+module.exports = {
+  checkVowel,
+  encode,
+  checkDecode,
+  decode
+}
