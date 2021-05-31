@@ -1,0 +1,12 @@
+h1 {
+  background-color: aqua;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px;
+}
