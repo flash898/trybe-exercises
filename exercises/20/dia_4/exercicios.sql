@@ -25,3 +25,10 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE Pixar.Movies
 SET title = 'Ratatouille', year = 2007
 WHERE id = 3;
+
+-- Exercício 5 : Insira as novas classificações abaixo na tabela BoxOffice , lembre-se que a coluna movie_id é uma foreign key referente a coluna id da tabela Movies :
+
+INSERT INTO Pixar.BoxOffice (movie_id, rating, domestic_sales, international_sales)
+	VALUES(8, 8.5, 300000000, 250000000),
+		    (10, 7.4, 460000000, 510000000),
+		    (11, 9.9, 290000000, 280000000);
