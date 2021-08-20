@@ -8,3 +8,8 @@ SELECT * FROM Pecas WHERE name LIKE 'GR%';
 USE PecasFornecedores;
 SELECT * FROM Fornecimentos WHERE peca = 2 ORDER BY Fornecedor;
 
+-- 3- Escreva uma query para exibir as peças, preço e fornecedor de todos os fornecimentos em que o código do fornecedor tenha a letra N .
+
+USE PecasFornecedores;
+SELECT peca, Fornecedor, Preco FROM Fornecimentos 
+WHERE Fornecedor LIKE '%N%';
