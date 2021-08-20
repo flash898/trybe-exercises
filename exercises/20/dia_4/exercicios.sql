@@ -41,3 +41,12 @@ DELETE FROM Pixar.BoxOffice
 WHERE movie_id = 11;
 DELETE FROM Pixar.Movies
 WHERE title = 'WALL-E';
+
+-- Exercício 7 : Exclua da tabela Movies todos os filmes dirigidos por "Andrew Staton".
+
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE FROM Pixar.BoxOffice
+WHERE movie_id IN (1, 2, 5, 6, 9);
+DELETE FROM Pixar.Movies
+WHERE director = 'Andrew Staton';
