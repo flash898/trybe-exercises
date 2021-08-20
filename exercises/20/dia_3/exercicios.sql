@@ -13,3 +13,9 @@ SELECT * FROM Fornecimentos WHERE peca = 2 ORDER BY Fornecedor;
 USE PecasFornecedores;
 SELECT peca, Fornecedor, Preco FROM Fornecimentos 
 WHERE Fornecedor LIKE '%N%';
+
+-- 4- Escreva uma query para exibir todas as informações dos fornecedores que são empresas limitadas (LTDA). Ordene os resultados em ordem alfabética decrescente
+
+USE PecasFornecedores;
+SELECT * FROM Fornecedores
+WHERE name LIKE '%LTDA%' ORDER BY name DESC;
