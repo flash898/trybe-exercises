@@ -21,4 +21,4 @@ SET SQL_SAFE_UPDATES = 0;
 DELETE FROM Pixar.BoxOffice
 WHERE movie_id IN (3, 4, 10);
 DELETE FROM Pixar.Movies
-WHERE length_minutes > 100;
+WHERE length_minutes < 100;
