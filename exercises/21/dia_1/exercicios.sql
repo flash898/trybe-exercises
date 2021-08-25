@@ -42,3 +42,7 @@ GROUP BY DEPARTMENT_ID HAVING TOTAL_EMPLOYEES > 10;
 
 UPDATE hr.employees SET PHONE_NUMBER = REPLACE(PHONE_NUMBER, '515', '777') WHERE PHONE_NUMBER LIKE '515%';
 SELECT * FROM hr.employees;
+
+-- 12. Escreva uma query que só exiba as informações dos funcionários cujo o primeiro nome tenha oito ou mais caracteres.
+
+SELECT * FROM hr.employees WHERE LENGTH(FIRST_NAME) >= 8 ;
