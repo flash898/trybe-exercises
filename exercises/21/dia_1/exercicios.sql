@@ -37,3 +37,8 @@ SELECT JOB_ID, AVG(SALARY) AS MEDIA_PAYMENT FROM hr.employees WHERE JOB_ID != 'I
 
 SELECT AVG(SALARY) AS MEDIA_SALARY, COUNT(*) AS TOTAL_EMPLOYEES FROM hr.employees
 GROUP BY DEPARTMENT_ID HAVING TOTAL_EMPLOYEES > 10;
+
+-- 11. Escreva uma query que atualize a coluna PHONE_NUMBER , de modo que todos os telefones iniciados por 515 agora devem iniciar com 777 .
+
+UPDATE hr.employees SET PHONE_NUMBER = REPLACE(PHONE_NUMBER, '515', '777') WHERE PHONE_NUMBER LIKE '515%';
+SELECT * FROM hr.employees;
