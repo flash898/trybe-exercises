@@ -62,3 +62,7 @@ SELECT EMPLOYEE_ID, FIRST_NAME, MONTH(HIRE_DATE) FROM hr.employees;
 -- 16. Escreva uma query que exiba os nomes dos funcionários em letra maiúscula.
 
 SELECT UCASE(FIRST_NAME) FROM hr.employees;
+
+-- 17: Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.
+
+SELECT LAST_NAME, HIRE_DATE from hr.employees WHERE HIRE_DATE BETWEEN '1987-07-01' AND '1987-07-31';
