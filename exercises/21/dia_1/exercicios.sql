@@ -32,3 +32,8 @@ SELECT JOB_ID, SUM(SALARY) AS TOTAL_PAYMENT FROM hr.employees WHERE JOB_ID = 'IT
 -- 9. Escreva uma query que exiba em ordem decrescente a média salarial de todos os cargos, exceto das pessoas programadoras ( IT_PROG ).
 
 SELECT JOB_ID, AVG(SALARY) AS MEDIA_PAYMENT FROM hr.employees WHERE JOB_ID != 'IT_PROG' GROUP BY JOB_ID ORDER BY MEDIA_PAYMENT DESC;
+
+-- 10. Escreva um query que exiba média salarial e o número de funcionários de todos os departamentos com mais de dez funcionários. Dica: agrupe pelo department_id .
+
+SELECT AVG(SALARY) AS MEDIA_SALARY, COUNT(*) AS TOTAL_EMPLOYEES FROM hr.employees
+GROUP BY DEPARTMENT_ID HAVING TOTAL_EMPLOYEES > 10;
