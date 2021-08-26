@@ -25,3 +25,7 @@ SELECT m.title FROM Pixar.Movies AS m WHERE id IN (SELECT movie_id FROM Pixar.Bo
 -- Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem as avaliações dos filmes lançados depois de 2009.
 
 SELECT m.title FROM Pixar.Movies AS m WHERE id IN (SELECT movie_id FROM Pixar.BoxOffice AS b WHERE year > 2009);
+
+-- Exercício 8: Utilizando o EXISTS , selecione o nome e localização dos cinemas que possuem filmes em cartaz.
+
+SELECT t.`name`, t.location FROM Pixar.Theater AS t WHERE EXISTS (SELECT * FROM Pixar.Movies WHERE Movies.theater_id = t.id);
