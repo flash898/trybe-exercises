@@ -22,3 +22,6 @@ SELECT t.`name`, t.location , m.title,  m.director, m.`year`, m.length_minutes F
 
 SELECT m.title FROM Pixar.Movies AS m WHERE id IN (SELECT movie_id FROM Pixar.BoxOffice WHERE rating > 7.5);
 
+-- Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem as avaliações dos filmes lançados depois de 2009.
+
+SELECT m.title FROM Pixar.Movies AS m WHERE id IN (SELECT movie_id FROM Pixar.BoxOffice AS b WHERE year > 2009);
