@@ -13,3 +13,7 @@ SELECT m.title, b.rating FROM Pixar.BoxOffice AS b INNER JOIN Movies AS m ON m.i
 -- Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os dados dos cinemas, mesmo os que não possuem filmes em cartaz e, adicionalmente, os dados dos filmes que estão em cartaz nestes cinemas. Retorne os nomes dos cinemas em ordem alfabética.
 
 SELECT m.title, m.director, m.`year`, m.length_minutes, t.`name`, t.location FROM Pixar.Theater AS t LEFT JOIN Movies AS m ON t.id = m.theater_id ORDER BY t.`name` ASC;
+
+-- Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, os dados dos cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética.
+
+SELECT t.`name`, t.location , m.title,  m.director, m.`year`, m.length_minutes FROM Pixar.Theater AS t RIGHT JOIN Movies AS m ON t.id = m.theater_id ORDER BY t.`name` ASC;
