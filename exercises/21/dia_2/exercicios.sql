@@ -17,3 +17,8 @@ SELECT m.title, m.director, m.`year`, m.length_minutes, t.`name`, t.location FRO
 -- Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, os dados dos cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética.
 
 SELECT t.`name`, t.location , m.title,  m.director, m.`year`, m.length_minutes FROM Pixar.Theater AS t RIGHT JOIN Movies AS m ON t.id = m.theater_id ORDER BY t.`name` ASC;
+
+-- Exercício 6: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem os títulos dos filmes que possuem avaliação maior que 7.5.
+
+SELECT m.title FROM Pixar.Movies AS m WHERE id IN (SELECT movie_id FROM Pixar.BoxOffice WHERE rating > 7.5);
+
