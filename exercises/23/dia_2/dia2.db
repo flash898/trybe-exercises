@@ -65,3 +65,6 @@ R: db.superheroes.find({ "aspects.hairColor": { $exists: true }}).count();
 
 Exercício 18: Remova apenas um documento publicado pela Sony Pictures .
 R: db.superheroes.deleteOne({ publisher: "Sony Pictures" });
+
+Exercício 19: Remova todos os documentos publicados pelo George Lucas .
+R: db.superheroes.deleteMany({ publisher: "George Lucas" });
