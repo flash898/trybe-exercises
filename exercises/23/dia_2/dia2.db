@@ -15,3 +15,6 @@ R: db.superheroes.find({ "aspects.height": { $gte: 200 } }).limit(1);
 
 Exercício 6: Retorne o total de super-heróis com 2.00m ou mais.
 R: db.superheroes.find({ "aspects.height": { $gte: 200 } }).count();
+
+Exercício 7: Selecione todos os super-heróis que têm olhos verdes.
+R: db.superheroes.find({ "aspects.eyeColor": { $eq: "green"} });
