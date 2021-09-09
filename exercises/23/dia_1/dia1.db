@@ -18,3 +18,6 @@ R: db.bios.find().limit(2).skip(5).pretty();
 
 Exercício 7 : Retorne a quantidade de documentos da coleção books .
 R: db.books.count();
+
+Exercício 8 : Conte quantos livros existem com o status = "PUBLISH" .
+R: db.books.find({status: "PUBLISH"}).count();
