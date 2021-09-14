@@ -47,14 +47,38 @@ use ('class');
 //   } }
 // );
 
-db.movies.updateMany(
-  { $or: 
-  [{ "title": "Batman" },
-  { "title": "Home Alone" } ]
+// db.movies.updateMany(
+//   { $or: 
+//   [{ "title": "Batman" },
+//   { "title": "Home Alone" } ]
+//   },
+//   { $push: {
+//       "category": "90's"
+//   } }
+// );
+
+db.movies.updateOne(
+  { "title": "Home Alone" },
+  {
+    $push: {
+      "cast": { 
+        $each: [
+      {
+        "actor": "Macaulay Culkin",
+        "character": "Kevin"
+      },
+      {
+        "actor": "Joe Pesci",
+        "character": "Harry"
+      },
+      {
+        "actor": "Daniel Stern"
+      },
+      ],
+      },
+    },
   },
-  { $push: {
-      "category": "90's"
-  } }
+  { upsert: true },
 );
 
 db.movies.find();
