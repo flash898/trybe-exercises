@@ -59,9 +59,16 @@ use ('class');
 //   { $set: { "sequels": 0 } }
 // );
 
-db.movies.updateMany( 
-  { },
-  { $unset: { "budget": "", "estimatedBudget": "" } }
+// db.movies.updateMany( 
+//   { },
+//   { $unset: { "budget": "", "estimatedBudget": "" } }
+// );
+
+db.movies.updateMany(
+  { $or: 
+  [ {"title": "Home Alone" }, 
+    { "title": "Batman" } ] },
+  { $max: { "imdbRating": 17} }
 );
 
 db.movies.find();
