@@ -40,11 +40,18 @@ use ('class');
 //   { $min: {"budget": 5} }
 // );
 
+// db.movies.updateOne(
+//   {"title": "Godzilla"},
+//   { $max: {"imdbRating": 8.6}, 
+//     $set: { "category.1": "thriller" }  
+//   }
+// );
+
 db.movies.updateOne(
-  {"title": "Godzilla"},
-  { $max: {"imdbRating": 8.6}, 
-    $set: { "category.1": "thriller" }  
-  }
+  {"title": "Home Alone"},
+  { $currentDate: {
+    "lastUpdate": { $type: "timestamp" }
+  } }
 );
 
 db.movies.find();
