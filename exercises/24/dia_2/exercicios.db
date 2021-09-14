@@ -25,10 +25,18 @@ use ('class');
 //   } }
 // );
 
+// db.movies.updateOne(
+//   { "title": "Batman" },
+//   { $pull: {
+//       "category": "adventure" 
+//   } }
+// );
+
+
 db.movies.updateOne(
   { "title": "Batman" },
-  { $pull: {
-      "category": "adventure" 
+  { $pop: {
+      "category": 1 
   } }
 );
 
