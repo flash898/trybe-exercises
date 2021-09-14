@@ -1,7 +1,13 @@
 use ('class');
 
+// db.movies.updateOne(
+//   {"title": "Batman"},
+//   { $set: {"imdbRating": 7.7} }
+// );
+
 db.movies.updateOne(
-  {"title": "Batman"},
-  { $set: {"imdbRating": 7.7} }
+  {"title": "Godzilla"},
+  { $set: {"budget": 1} }
 );
 
+// db.movies.find();
