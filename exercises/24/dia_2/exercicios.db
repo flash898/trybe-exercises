@@ -7,15 +7,22 @@ use ('class');
 //   } }
 // );
 
+// db.movies.updateOne(
+//   { "title": "Batman" },
+//   { $push: {
+//        "category":{ 
+//          $each: 
+//          ["villain", "comic-based"]
+//         }     
+//     } 
+//   }
+// );
+
 db.movies.updateOne(
   { "title": "Batman" },
-  { $push: {
-       "category":{ 
-         $each: 
-         ["villain", "comic-based"]
-        }     
-    } 
-  }
+  { $pop: {
+      "category": -1 
+  } }
 );
 
 db.movies.find();
