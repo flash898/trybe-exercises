@@ -57,28 +57,34 @@ use ('class');
 //   } }
 // );
 
+// db.movies.updateOne(
+//   { "title": "Home Alone" },
+//   {
+//     $push: {
+//       "cast": { 
+//         $each: [
+//       {
+//         "actor": "Macaulay Culkin",
+//         "character": "Kevin"
+//       },
+//       {
+//         "actor": "Joe Pesci",
+//         "character": "Harry"
+//       },
+//       {
+//         "actor": "Daniel Stern"
+//       },
+//       ],
+//       },
+//     },
+//   },
+//   { upsert: true },
+// );
+
 db.movies.updateOne(
   { "title": "Home Alone" },
-  {
-    $push: {
-      "cast": { 
-        $each: [
-      {
-        "actor": "Macaulay Culkin",
-        "character": "Kevin"
-      },
-      {
-        "actor": "Joe Pesci",
-        "character": "Harry"
-      },
-      {
-        "actor": "Daniel Stern"
-      },
-      ],
-      },
-    },
-  },
-  { upsert: true },
+  { $set: { "cast.$[elemento].character": "Marv" } },
+  { arrayFilters: [ { "elemento.actor": "Daniel Stern" } ] }
 );
 
 db.movies.find();
