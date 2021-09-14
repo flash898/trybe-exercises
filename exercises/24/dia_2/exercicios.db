@@ -40,10 +40,20 @@ use ('class');
 //   } }
 // );
 
-db.movies.updateOne(
-  { "title": "Batman" },
-  { $addToSet: {
-      "category": "action"
+// db.movies.updateOne(
+//   { "title": "Batman" },
+//   { $addToSet: {
+//       "category": "action"
+//   } }
+// );
+
+db.movies.updateMany(
+  { $or: 
+  [{ "title": "Batman" },
+  { "title": "Home Alone" } ]
+  },
+  { $push: {
+      "category": "90's"
   } }
 );
 
