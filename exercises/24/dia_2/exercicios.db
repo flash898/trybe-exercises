@@ -87,26 +87,59 @@ use ('class');
 //   { arrayFilters: [ { "elemento.actor": "Daniel Stern" } ] }
 // );
 
+// db.movies.updateOne(
+//   { "title": "Batman" },
+//   {
+//     $push: {
+//       "cast": { 
+//         $each: [
+//       {
+//         "character": "Batman"
+//       },
+//       {
+//         "character": "Alfred"
+//       },
+//       {
+//         "character": "Coringa"
+//       },
+//       ],
+//       },
+//     },
+//   },
+//   { upsert: true },
+// );
+
 db.movies.updateOne(
   { "title": "Batman" },
-  {
-    $push: {
-      "cast": { 
-        $each: [
-      {
-        "character": "Batman"
-      },
-      {
-        "character": "Alfred"
-      },
-      {
-        "character": "Coringa"
-      },
-      ],
-      },
-    },
+  { $set: { 
+      "cast.$[elemento].actor": "Christian Bale",
+    }, 
   },
-  { upsert: true },
+  { arrayFilters: [ {
+     "elemento.character": "Batman",
+    } ] }
+);
+
+db.movies.updateOne(
+  { "title": "Batman" },
+  { $set: { 
+      "cast.$[elemento].actor": "Michael Caine",
+    }, 
+  },
+  { arrayFilters: [ {
+     "elemento.character": "Alfred",
+    } ] }
+);
+
+db.movies.updateOne(
+  { "title": "Batman" },
+  { $set: { 
+      "cast.$[elemento].actor": "Heath Ledger",      
+    }, 
+  },
+  { arrayFilters: [ {
+     "elemento.character": "Coringa",
+    } ] }
 );
 
 db.movies.find();
