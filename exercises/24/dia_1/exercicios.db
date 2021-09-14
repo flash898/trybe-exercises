@@ -20,9 +20,14 @@ use ('class');
 //   { $inc: {"imdbRating": 2} }
 // );
 
+// db.movies.updateOne(
+//   {"title": "Home Alone"},
+//   { $inc: {"budget": 5} }
+// );
+
 db.movies.updateOne(
-  {"title": "Home Alone"},
-  { $inc: {"budget": 5} }
+  {"title": "Batman"},
+  { $mul: {"imdbRating": 4} }
 );
 
 db.movies.find();
