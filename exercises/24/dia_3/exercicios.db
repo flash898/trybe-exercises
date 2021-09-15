@@ -1,18 +1,21 @@
 use('class');
 
+//1 -
 // db.movies.find({
 //   "category": {
 //     $all: ["action","adventure"]
 //   }
 // });
 
+//2-
 // db.movies.find({
 //   $and: [
 //     { "category": { $all: ["action"] } },
-//     { "imdbRating": { $gte: 7 } }
+//     { "imdbRating": { $gt: 7 } }
 //   ],
 // });
 
+//3-
 // db.movies.updateOne(
 //   { "title": "Batman" },
 //   {
@@ -23,6 +26,7 @@ use('class');
 //   }
 // });
 
+//4-
 // db.movies.updateOne(
 //   { "title": "Godzilla" },
 //   {
@@ -33,6 +37,7 @@ use('class');
 //   }
 // });
 
+//5-
 // db.movies.updateOne(
 //   { "title": "Home Alone" },
 //   {
@@ -43,22 +48,26 @@ use('class');
 //   }
 // });
 
+//6-
 // db.movies.find(
 //   { "ratings": { $elemMatch: { $gt: 103 } } },
 //   { "title": 1, "ratings": 1, _id: 0 }
 // );
 
+//7-
 // db.movies.find(
 //   { "ratings": { $elemMatch: { $gte: 100, $lte: 105 } } },
 //   { "title": 1, "ratings": 1, _id: 0 }
 // );
 
+//9-
 // db.movies.find(
 //   {"ratings": 
 //     { $elemMatch: { $all: ["adventure"], $gt: 103 } } },
 //   { "title": 1, "ratings": 1, "category": 1, _id: 0 }
 // );
 
+//10-
 // db.movies.find(
 //   {"category": 
 //     { $size: 2 } 
@@ -66,6 +75,7 @@ use('class');
 //   { "title": 1, _id: 0 }
 // );
 
+//11-
 // db.movies.find(
 //   {"ratings": 
 //     { $size: 4 } 
@@ -73,15 +83,26 @@ use('class');
 //   { "title": 1, _id: 0 }
 // );
 
+//12-
 // db.movies.find({
 //   "budget": { $mod: [5, 0] },
 //   "category": { $size: 2 }
 // });
 
+//13-
+// db.movies.find({
+//   $or: [
+//     { "category": { $all: [ "sci-fi" ] } },
+//     { "ratings": { $elemMatch: { $gt: 199 } } }
+//   ]
+// }, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
+
+//14-
 db.movies.find({
-  $or: [
-    { "category": { $all: [ "sci-fi" ] } },
-    { "ratings": { $elemMatch: { $gt: 199 } } }
-  ]
-}, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
+  $and: [
+    { "ratings": { $size: 4 } },
+    { "category": { $in: [ "adventure", "family" ] } },
+    { "imdbRating": { $not: { $lt: 7 } } }
+  ]}, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
+
 // db.movies.find();
