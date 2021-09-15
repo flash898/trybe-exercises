@@ -118,9 +118,14 @@ use('class');
 // );
 
 //17-
-db.movies.updateOne(
-  { "title": "Home Alone" },
-  { $set: { "description": "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation." } }
+// db.movies.updateOne(
+//   { "title": "Home Alone" },
+//   { $set: { "description": "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation." } }
+// );
+
+//18-
+db.movies.find(
+  { "description": { $regex: /The/ } }
 );
 
-db.movies.find();
+// db.movies.find();
