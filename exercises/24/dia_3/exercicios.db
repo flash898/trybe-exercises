@@ -137,7 +137,13 @@ use('class');
 // db.movies.createIndex({ description: "text" });
 
 //21-
+// db.movies.find({
+//   $text: { $search: "vacation" }
+// });
+
+//22-
 db.movies.find({
-  $text: { $search: "vacation" }
+  $text: { $search: "monstrous criminal" }
 });
+
 // db.movies.find();
