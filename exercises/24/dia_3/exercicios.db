@@ -33,14 +33,17 @@ use('class');
 //   }
 // });
 
-db.movies.updateOne(
-  { "title": "Home Alone" },
-  {
-  $push: {
-    "ratings": {
-      $each: [200, 99, 65]
-    }
-  }
-});
+// db.movies.updateOne(
+//   { "title": "Home Alone" },
+//   {
+//   $push: {
+//     "ratings": {
+//       $each: [200, 99, 65]
+//     }
+//   }
+// });
 
-db.movies.find();
+db.movies.find(
+  { "ratings": { $elemMatch: { $gt: 103 } } },
+  { "title": 1, "ratings": 1, _id: 0 }
+);
