@@ -142,8 +142,12 @@ use('class');
 // });
 
 //22-
-db.movies.find({
-  $text: { $search: "monstrous criminal" }
-});
+// db.movies.find({
+//   $text: { $search: "monstrous criminal" }
+// });
 
+//23-
+db.movies.find({
+  $text: { $search: "\"when he is accidentally\"" }
+});
 // db.movies.find();
