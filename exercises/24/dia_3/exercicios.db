@@ -129,7 +129,10 @@ use('class');
 // );
 
 //19- 
-db.movies.find(
-  { "description": { $regex: /humanity.$/ } }
-);
-// db.movies.find();
+// db.movies.find(
+//   { "description": { $regex: /humanity.$/ } }
+// );
+
+//20-
+db.movies.createIndex({ description: "text" });
+db.movies.find();
