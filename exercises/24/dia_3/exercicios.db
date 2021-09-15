@@ -124,8 +124,12 @@ use('class');
 // );
 
 //18-
-db.movies.find(
-  { "description": { $regex: /The/ } }
-);
+// db.movies.find(
+//   { "description": { $regex: /The/ } }
+// );
 
+//19- 
+db.movies.find(
+  { "description": { $regex: /humanity.$/ } }
+);
 // db.movies.find();
