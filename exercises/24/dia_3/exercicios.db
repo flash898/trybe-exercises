@@ -53,10 +53,17 @@ use('class');
 //   { "title": 1, "ratings": 1, _id: 0 }
 // );
 
+// db.movies.find(
+//   {"ratings": 
+//     { $elemMatch: { $all: ["adventure"], $gt: 103 } } },
+//   { "title": 1, "ratings": 1, "category": 1, _id: 0 }
+// );
+
 db.movies.find(
-  {"ratings": 
-    { $elemMatch: { $all: ["adventure"], $gt: 103 } } },
-  { "title": 1, "ratings": 1, "category": 1, _id: 0 }
+  {"category": 
+    { $size: 2 } 
+  },
+  { "title": 1, _id: 0 }
 );
 
-db.movies.find();
+// db.movies.find();
