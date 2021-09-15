@@ -23,12 +23,22 @@ use('class');
 //   }
 // });
 
+// db.movies.updateOne(
+//   { "title": "Godzilla" },
+//   {
+//   $push: {
+//     "ratings": {
+//       $each: [78, 52, 95, 102]
+//     }
+//   }
+// });
+
 db.movies.updateOne(
-  { "title": "Godzilla" },
+  { "title": "Home Alone" },
   {
   $push: {
     "ratings": {
-      $each: [78, 52, 95, 102]
+      $each: [200, 99, 65]
     }
   }
 });
