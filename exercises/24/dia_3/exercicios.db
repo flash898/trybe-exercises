@@ -1,7 +1,14 @@
 use('class');
 
+// db.movies.find({
+//   "category": {
+//     $all: ["action","adventure"]
+//   }
+// });
+
 db.movies.find({
-  "category": {
-    $all: ["action","adventure"]
-  }
+  $and: [
+    { "category": { $all: ["action"] } },
+    { "imdbRating": { $gte: 7 } }
+  ],
 });
