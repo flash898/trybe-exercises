@@ -6,9 +6,21 @@ use('class');
 //   }
 // });
 
-db.movies.find({
-  $and: [
-    { "category": { $all: ["action"] } },
-    { "imdbRating": { $gte: 7 } }
-  ],
+// db.movies.find({
+//   $and: [
+//     { "category": { $all: ["action"] } },
+//     { "imdbRating": { $gte: 7 } }
+//   ],
+// });
+
+db.movies.update(
+  { "title": "Batman" },
+  {
+  $push: {
+    "ratings": {
+      $each: [85, 100, 102, 105]
+    }
+  }
 });
+
+db.movies.find();
