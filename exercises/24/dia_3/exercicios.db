@@ -98,11 +98,17 @@ use('class');
 // }, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
 
 //14-
-db.movies.find({
-  $and: [
-    { "ratings": { $size: 4 } },
-    { "category": { $in: [ "adventure", "family" ] } },
-    { "imdbRating": { $not: { $lt: 7 } } }
-  ]}, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
+// db.movies.find({
+//   $and: [
+//     { "ratings": { $size: 4 } },
+//     { "category": { $in: [ "adventure", "family" ] } },
+//     { "imdbRating": { $not: { $lt: 7 } } }
+//   ]}, { "title": 1, "ratings": 1, "category": 1, _id: 0 });
 
-// db.movies.find();
+//15-
+db.movies.updateOne(
+  { "title": "Batman" },
+  { $set: { "description": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker." } }
+);
+
+db.movies.find();
