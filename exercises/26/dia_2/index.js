@@ -3,7 +3,7 @@ const num2 = Math.floor(Math.random() * 100 + 1);
 const num3 = Math.floor(Math.random() * 10 + 1);
 
 let resultado;
-
+ 
 console.log(num1, num2, num3);
 
 function calcularNumeros(num1, num2, num3) {
@@ -25,6 +25,9 @@ function calcularNumeros(num1, num2, num3) {
   return promise;
 }
 
-calcularNumeros(num1, num2, num3)
-    .then(result => console.log(result))
-    .catch (e => console.log(e.message));
+try {
+  calcularNumeros(num1, num2, num3);
+  console.log(resultado);
+} catch (e) {
+  console.log(e.message);
+}
