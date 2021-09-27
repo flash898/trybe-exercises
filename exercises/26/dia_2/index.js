@@ -25,9 +25,13 @@ function calcularNumeros(num1, num2, num3) {
   return promise;
 }
 
-try {
-  calcularNumeros(num1, num2, num3);
-  console.log(resultado);
-} catch (e) {
-  console.log(e.message);
+async function callCalc() {
+  try {
+    calcularNumeros(num1, num2, num3);
+    console.log(resultado);
+  } catch (e) {
+    console.error(e.message);
+  }
 }
+
+callCalc();
