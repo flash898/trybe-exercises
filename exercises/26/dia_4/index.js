@@ -56,6 +56,17 @@ app.get('/simpsons/:id', async function(req, res){
   res.status(200).json(findSimpson);
 });
 
+app.post('/simpsons', async function(req, res){
+  const { id, name } = req.body;
+  const simpsonsArr = await readSimpsons();
+  const findSimpson = simpsonsArr.map(({ id }) => id).includes(id);
+  if(findSimpson) return res.status(409).json({ message: 'id already exists' });
+  simpsonsArr.push({ id, name });
+
+  await writeSimpsons(simpsonsArr);
+  res.status(204).end();
+});
+
 app.listen(3002, () => {
   console.log('Aplicação na porta 3002');
 });
