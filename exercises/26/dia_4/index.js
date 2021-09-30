@@ -48,6 +48,14 @@ app.get('/simpsons', async function(_req, res){
   res.status(200).json(simpsonsArr);
 });
 
+app.get('/simpsons/:id', async function(req, res){
+  const simpsonsArr = await readSimpsons();
+  const findSimpson = simpsonsArr.find(({ id }) => id === req.params.id);
+
+  if(!findSimpson) res.status(404).json({ message: "Simpson not found" });
+  res.status(200).json(findSimpson);
+});
+
 app.listen(3002, () => {
   console.log('Aplicação na porta 3002');
 });
