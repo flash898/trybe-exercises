@@ -5,38 +5,62 @@ const ProductModel = require('../models/productModel');
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
-  const products = await ProductModel.getAll();
+router.get('/', async (_req, res, _next) => {
+  try {
+    const products = await ProductModel.getAll();
+    
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(404).json({ message: 'Not found' });
+  }
 
-  res.json(products);
 })
 
 router.get('/:id', async (req, res, next) => {
-  const product = await ProductModel.getById(req.params.id);
+  try {
+    const product = await ProductModel.getById(req.params.id);
 
-  res.json(product)
+    res.status(200).json(product)
+  } catch (error) {
+    res.status(404).json({ message: 'Product not found' });
+  }
+  
 })
 
 router.post('/', async (req, res) => {
   const { name, brand } = req.body;
 
-  const newProduct = await ProductModel.add(name, brand);
+  try {
+    const newProduct = await ProductModel.add(name, brand);
 
-  res.json(newProduct);
+    res.status(201).json(newProduct);
+  } catch (error) {
+      res.status(500).json({ message: 'Cannot possible create new product' });
+  }
+  
 })
 
 router.delete('/:id', async (req, res) => {
-  const products = await ProductModel.exclude(req.params.id);
+  try {
+    const products = await ProductModel.exclude(req.params.id);
 
-  res.json(products);
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: 'Cannot possible delete product' });
+  }
+ 
 })
 
 router.put('/:id', async (req, res) => {
   const { name, brand } = req.body;
+  try {
+    const products = await ProductModel.update(req.params.id, name, brand);
 
-  const products = await ProductModel.update(req.params.id, name, brand);
-
-  res.json(products);
+  res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: 'Cannot possible uodate product' });
+  }
+  
 })
 
 module.exports = router;
